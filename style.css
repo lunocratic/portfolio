@@ -292,3 +292,57 @@ h1 {
         right: -8px;
     }
 }
+
+.pronounce-button {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pronounce-button .icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.pronounce-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: #333;
+}
+
+.pronounce-button:hover .icon {
+    transform: scale(1.2);
+}
+
+.pronounce-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .pronounce-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pronounce-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+        margin-top: 1.2rem;
+    }
+}

@@ -2,6 +2,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('doodleCanvas');
     const ctx = canvas.getContext('2d');
     
+    // Pronunciation button functionality with instant audio playback
+    const pronounceBtn = document.getElementById('pronounceBtn');
+    if (pronounceBtn) {
+        pronounceBtn.addEventListener('click', function() {
+            // Cancel any ongoing speech for instant response
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                // Create and speak immediately with faster rate
+                const utterance = new SpeechSynthesisUtterance('Nigga');
+                utterance.rate = 1.2;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                
+                // Speak immediately without delay
+                window.speechSynthesis.speak(utterance);
+                
+                // Visual feedback - pulse animation
+                pronounceBtn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    pronounceBtn.style.transform = '';
+                }, 100);
+            }
+        });
+    }
+    
     // Animated doodles array
     let animatedDoodles = [];
     let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
